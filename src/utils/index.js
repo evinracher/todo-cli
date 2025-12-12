@@ -4,7 +4,7 @@ export const formatTasks = (tasks) => {
   const formattedTasks = tasks.map((task, index) => {
     const completed = task.status === STATUS.completed;
     const statusIcon = completed ? "\x1b[32m✓\x1b[0m" : " ";
-    return `${statusIcon} ${index}. ${task.description}`;
+    return `${statusIcon} ${index + 1}. ${task.description}`;
   });
   return formattedTasks.join("\n");
 };

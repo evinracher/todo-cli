@@ -1,6 +1,6 @@
 import { hideBin } from "yargs/helpers";
 import yargs from "yargs";
-import { getTasks } from "./tasks.js";
+import { completeTask, getTasks } from "./tasks.js";
 import { printAllTasks } from "./utils/index.js";
 
 yargs(hideBin(process.argv))
@@ -10,20 +10,26 @@ yargs(hideBin(process.argv))
     () => {},
     async (_) => {
       const tasks = await getTasks();
-      printAllTasks(tasks)
+      printAllTasks(tasks);
     }
   )
   .command(
-    "complete <id>",
-    "complete task by id",
+    "complete <number>",
+    "complete task n° <number>",
     (yargs) => {
-      return yargs.positional("id", {
+      return yargs.positional("number", {
         type: "number",
-        description: "The id of the task you want to mark as completed",
+        description: "The number of the task you want to mark as completed",
       });
     },
     async (argv) => {
-      // TODO: implement task completing command
+      const { number } = argv;
+      try {
+        await completeTask(number);
+        console.error("Task has been completed!")
+      } catch (error) {
+        console.error(error.message)
+      }
     }
   )
   .command(
