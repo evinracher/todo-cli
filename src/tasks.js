@@ -1,7 +1,7 @@
 import { STATUS } from "./constants.js";
 import { saveDB, getDB } from "./db.js";
 
-export const saveTasks = async (tasks) => {
+const saveTasks = async (tasks) => {
   await saveDB({ tasks });
 };
 
@@ -11,12 +11,35 @@ export const getTasks = async () => {
 };
 
 export const completeTask = async (number) => {
+  const taskIndex = number - 1;
   const tasks = await getTasks();
 
-  if (number >= tasks.length || number <= 0) {
+  if (taskIndex >= tasks.length || taskIndex <= 0) {
     throw new Error("Task doesn't exist");
   }
 
-  tasks[number - 1].status = STATUS.completed;
+  tasks[taskIndex].status = STATUS.completed;
   await saveTasks(tasks);
+};
+
+export const clearTasks = async (all) => {
+  const tasks = await getDB();
+
+  if (all) {
+    await saveTasks([]);
+  } else {
+    await saveTasks(tasks.filter((task) => task.status === STATUS.completed));
+  }
+};
+
+export const addTask = async (description) => {
+  const newTask = {
+    description,
+    status: STATUS.pending,
+  };
+  const tasks = await getTasks();
+  
+  tasks.push(newTask);
+  
+  await saveTasks(tasks)
 };
