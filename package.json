@@ -6,7 +6,7 @@
     "todo": "./src/index.js"
   },
   "description": "A simple CLI to manage your pending tasks from terminal",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,5 +17,8 @@
     "cli"
   ],
   "author": "evinracher",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "yargs": "^18.0.0"
+  }
 }
