@@ -1,15 +1,12 @@
 # ✅ Todo CLI — Task Management for Developers
 
 A simple CLI tool that lets you manage your pending tasks directly from the terminal.
----
+
+This project is a simple CLI that lets you handle your pending tasks like a real programmer, directly from the terminal. You don’t have to leave it anymore — your endless todo list stays in your work environment so you can keep working, day after day, until burnout feels inevitable.
 
 ## 🧠 What is this?
 
 **Todo CLI** is a lightweight command-line application built with **Node.js** for developers who spend most of their day in the terminal and want to manage tasks without leaving it.
-
-It is intentionally minimal and pragmatic: add tasks, list them, complete them, and clean up finished work. Nothing more.
-
----
 
 ## ✨ Features
 
@@ -20,7 +17,6 @@ It is intentionally minimal and pragmatic: add tasks, list them, complete them, 
 - 🧪 Basic unit tests
 - 📦 Modern ES Modules setup
 
----
 
 ## 🛠️ Tech Stack & Key Packages
 
@@ -34,7 +30,6 @@ It is intentionally minimal and pragmatic: add tasks, list them, complete them, 
 ### Native Modules
 - 📁 `fs` — File system access for task persistence
 
----
 
 ## 📦 Installation
 
@@ -52,7 +47,6 @@ To make the `todo` command available globally during development:
 npm link
 ```
 
----
 
 ## ▶️ Usage
 
@@ -88,7 +82,6 @@ todo clear
 todo --help
 ```
 
----
 
 ## 📋 Available Commands
 
@@ -99,7 +92,6 @@ todo complete <number>  complete task n° <number>
 todo clear              remove completed tasks
 ```
 
----
 
 ## 🧪 Testing
 
@@ -111,20 +103,17 @@ Run tests with:
 npm test
 ```
 
----
 
 ## 🧩 Pending Work / Roadmap
 
 - 🗄️ Add database integration (replace file-based storage)
 - 🧪 Complete and expand the test suite
 
----
 
 ## 🎯 Intended Audience
 
 This project is intended for **developers**, especially those who live in the terminal and prefer simple tools over heavy productivity systems.
 
----
 
 ## 👤 Author
 
