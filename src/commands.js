@@ -10,7 +10,7 @@ yargs(hideBin(process.argv))
   .fail(handlers.fail)
   .command(
     "$0 <description>",
-    "Add a new task (default command)",
+    "add a new task",
     (yargs) =>
       yargs.positional("description", {
         type: "string",
