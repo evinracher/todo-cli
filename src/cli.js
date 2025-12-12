@@ -1,4 +1,4 @@
-import { addTask, completeTask, getTasks } from "./tasks.js";
+import { addTask, clearTasks, completeTask, getTasks } from "./tasks.js";
 import { printAllTasks } from "./utils/index.js";
 
 const getAll = async (_) => {
@@ -18,11 +18,12 @@ const complete = async (argv) => {
 
 const add = async (argv) => {
   await addTask(argv.description);
-  getAll();
+  await getAll();
 };
 
 const clear = async (argv) => {
   await clearTasks(argv.all);
+  await getAll();
 };
 
 const fail = (msg, err, _) => {

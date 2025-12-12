@@ -23,12 +23,12 @@ export const completeTask = async (number) => {
 };
 
 export const clearTasks = async (all) => {
-  const tasks = await getDB();
+  const tasks = await getTasks();
 
   if (all) {
     await saveTasks([]);
   } else {
-    await saveTasks(tasks.filter((task) => task.status === STATUS.completed));
+    await saveTasks(tasks.filter((task) => task.status === STATUS.pending));
   }
 };
 

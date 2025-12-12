@@ -13,13 +13,17 @@ const formatHeader = (title = "Tasks") => {
   const header = title.toLocaleUpperCase();
   const terminalWidth = Math.min(process.stdout.columns, 80);
 
-  const titleLength = (terminalWidth - header.length);
-  const sideDecorators = "-".repeat((titleLength / 2)-1)
-  
+  const titleLength = terminalWidth - header.length;
+  const sideDecorators = "-".repeat(titleLength / 2 - 1);
+
   return `${sideDecorators} ${header} ${sideDecorators}`;
 };
 
 export const printAllTasks = (tasks) => {
-  console.log(formatHeader());
-  console.log(formatTasks(tasks));
+  if (tasks.length == 0) {
+    console.log("You don't have any tasks!");
+  } else {
+    console.log(formatHeader());
+    console.log(formatTasks(tasks));
+  }
 };
