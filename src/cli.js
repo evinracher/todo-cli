@@ -1,0 +1,43 @@
+import { hideBin } from "yargs/helpers";
+import yargs from "yargs";
+import { getTasks } from "./tasks.js";
+
+yargs(hideBin(process.argv))
+  .command(
+    "all",
+    "get all tasks",
+    () => {},
+    async (_) => {
+      // TODO: implement get all tasks
+      const tasks = await getTasks();
+      console.log("getting all tasks...", tasks);
+    }
+  )
+  .command(
+    "complete <id>",
+    "complete task by id",
+    (yargs) => {
+      return yargs.positional("id", {
+        type: "number",
+        description: "The id of the task you want to mark as completed",
+      });
+    },
+    async (argv) => {
+      // TODO: implement task completing command
+    }
+  )
+  .command(
+    "clear",
+    "remove completed tasks",
+    () => {},
+    async (argv) => {
+      // TODO: implement remove all tasks
+    }
+  )
+  .option("all", {
+    alias: "a",
+    type: "boolean",
+    description: "remove all tasks",
+  })
+  .demandCommand(1)
+  .parse();
