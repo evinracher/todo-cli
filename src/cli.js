@@ -1,6 +1,7 @@
 import { hideBin } from "yargs/helpers";
 import yargs from "yargs";
 import { getTasks } from "./tasks.js";
+import { printAllTasks } from "./utils/index.js";
 
 yargs(hideBin(process.argv))
   .command(
@@ -8,9 +9,8 @@ yargs(hideBin(process.argv))
     "get all tasks",
     () => {},
     async (_) => {
-      // TODO: implement get all tasks
       const tasks = await getTasks();
-      console.log("getting all tasks...", tasks);
+      printAllTasks(tasks)
     }
   )
   .command(

@@ -8,7 +8,7 @@
   "description": "A simple CLI to manage your pending tasks from terminal",
   "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "keywords": [
     "node.js",
@@ -19,6 +19,7 @@
   "author": "evinracher",
   "license": "ISC",
   "dependencies": {
+    "jest": "^30.2.0",
     "yargs": "^18.0.0"
   }
 }
