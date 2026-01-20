@@ -28,13 +28,16 @@ A simple CLI tool that lets you handle your pending tasks like a real programmer
 ### Native Modules
 - 📁 `fs` — File system access for task persistence
 
-
-## 📦 Installation
-
-Install dependencies:
+### 🌍 Install globally from npm
 
 ```bash
-npm install
+npm install -g stilltodo
+```
+
+Then use it anywhere with:
+
+```bash
+todo --help
 ```
 
 ### 🔗 Install the CLI locally
