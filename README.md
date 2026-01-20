@@ -15,20 +15,24 @@ A simple CLI tool that lets you handle your pending tasks like a real programmer
 - 🧪 Basic unit tests
 - 📦 Modern ES Modules setup
 
-
 ## 🛠️ Tech Stack & Key Packages
 
 ### Runtime
+
 - **Node.js** (ES Modules enabled)
 
 ### Main Packages
+
 - 📌 **yargs** — CLI command parsing and argument handling
 - 🧪 **jest** — Unit testing framework
 
 ### Native Modules
+
 - 📁 `fs` — File system access for task persistence
 
-### 🌍 Install globally from npm
+## 🌍 Installation
+
+### Install globally from npm
 
 ```bash
 npm install -g stilltodo
@@ -39,15 +43,6 @@ Then use it anywhere with:
 ```bash
 todo --help
 ```
-
-### 🔗 Install the CLI locally
-
-To make the `todo` command available globally during development:
-
-```bash
-npm link
-```
-
 
 ## ▶️ Usage
 
@@ -83,7 +78,6 @@ todo clear
 todo --help
 ```
 
-
 ## 📋 Available Commands
 
 ```bash
@@ -93,6 +87,15 @@ todo complete <number>  complete task n° <number>
 todo clear              remove completed tasks
 ```
 
+## Development
+
+### 🔗 Install the CLI locally
+
+To make the `todo` command available globally during development:
+
+```bash
+npm link
+```
 
 ## 🧪 Testing
 
@@ -104,22 +107,19 @@ Run tests with:
 npm test
 ```
 
-
 ## 🧩 Pending Work / Roadmap
 
 - 🗄️ Add database integration (replace file-based storage)
 - 🧪 Complete and expand the test suite
 - Add scope to the tasks (today, for the end of the week, for the end of the month)
 
-
 ## 🎯 Intended Audience
 
 This project is intended for **developers**, especially those who live in the terminal and prefer simple tools over heavy productivity systems.
 
-
 ## 👤 Author
 
 **Kevin Parra**  
-Senior Frontend Engineer | JavaScript • React • Node.js  
+Senior Frontend Engineer | JavaScript • React • Node.js
 
 🔗 LinkedIn: https://www.linkedin.com/in/evinracher/
