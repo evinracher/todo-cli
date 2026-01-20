@@ -1,6 +1,6 @@
 import { hideBin } from "yargs/helpers";
 import yargs from "yargs";
-import {handlers} from "./cli.js";
+import { handlers } from "./cli.js";
 
 yargs(hideBin(process.argv))
   .strict()
@@ -16,14 +16,9 @@ yargs(hideBin(process.argv))
         type: "string",
         describe: "Task description",
       }),
-    handlers.add
+    handlers.add,
   )
-  .command(
-    "all",
-    "get all tasks",
-    () => {},
-    handlers.getAll
-  )
+  .command("all", "get all tasks", () => {}, handlers.getAll)
   .command(
     "complete <number>",
     "complete task n° <number>",
@@ -33,14 +28,9 @@ yargs(hideBin(process.argv))
         description: "The number of the task you want to mark as completed",
       });
     },
-    handlers.complete
+    handlers.complete,
   )
-  .command(
-    "clear",
-    "remove completed tasks",
-    () => {},
-    handlers.clear
-  )
+  .command("clear", "remove completed tasks", () => {}, handlers.clear)
   .option("all", {
     alias: "a",
     type: "boolean",

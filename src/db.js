@@ -1,12 +1,24 @@
 import fs from "node:fs/promises";
 
 const DB_URL = new URL("../db.json", import.meta.url).pathname;
+const DEFAULT_DB = { tasks: [] };
 
 export const getDB = async () => {
-  const file = await fs.readFile(DB_URL, "utf-8");
-  const db = JSON.parse(file);
+  try {
+    const file = await fs.readFile(DB_URL, "utf-8");
+    
+    if (file?.trim()) {
+      return JSON.parse(file);
+    }
+  } catch (error) {
+    if (error?.code !== "ENOENT") {
+      console.error("Error accessing DB");
+      throw error;
+    }
+  }
 
-  return db;
+  await saveDB(DEFAULT_DB);
+  return DEFAULT_DB;
 };
 
 export const saveDB = async (db) => {
